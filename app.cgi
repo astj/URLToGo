@@ -247,7 +247,7 @@ any '/signup' => sub {
 		{
 			#login_succes
 			# Redirect to welcome page
-			$self->flash('message') = 'URLToGoへのユーザー登録が完了しました。';
+			$self->flash('message' => 'URLToGoへのユーザー登録が完了しました。');
 			$self->redirect_to('welcome');
 		}
 		else
