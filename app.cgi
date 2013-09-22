@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 
-require 5.10;
+require 5.010;
 
 # Neccessary for Local test
 #use lib '/opt/local/lib/perl5/vendor_perl/5.12.4';
@@ -216,7 +216,7 @@ any '/signup' => sub {
 	# Verify email with Email::Valid
     if ( !defined (Email::Valid->address($email))) { $error_occured = 1; $self->stash->{signup_error_email} = 'You need to input a valid e-mail address.'; }
 
-    NOERROR : if(!$error_occured)
+    if(!$error_occured)
     {
 		# 型検査はOKなので既存とのカブりを調べる
 		my $itr = $db->search('users', {username => $username});
@@ -226,9 +226,10 @@ any '/signup' => sub {
 #ひっかかってもうた
 		    $error_occured = 1;
 		    $self->stash->{signup_error_username} = 'This User ID is already used by somebody.';
-		    # ノンエラーのループから抜け出す
-		    last NOERROR;
 		}
+
+    if(!$error_occured)
+    {
 
 	    # OK。
 	    # PasswordをHash-nized する
@@ -253,7 +254,7 @@ any '/signup' => sub {
 		{
 			#Error
 		}
-
+            }
 	}
 
     $self->render;
