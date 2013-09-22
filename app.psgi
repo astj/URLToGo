@@ -18,12 +18,12 @@ use URLToGo::DB;
 use Email::Valid;
 # DateTime
 use DateTime;
-
+my $conf = plugin Config => {file => 'config/'.$ENV{PLACK_ENV}.'.conf'};
 # Make cookie secure!
 # というアピール
 app->secret('Key of Encryption of Session Cookie');
 
-my $db = URLToGo::DB->new({connect_info => ['dbi:Pg:dbname=ASTSimple;host=localhost','ast','itsme',{pg_enable_utf8=>1}]});
+my $db = URLToGo::DB->new({connect_info =>  $conf->{connect_info}});
 $db->load_plugin('Count');
 
 #Helper to check whether authenticated or not
