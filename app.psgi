@@ -122,7 +122,7 @@ get '/' => sub {
 	while(my $row = $itr->next)
 	{
 		$counter++; if($counter>$limit_display) { $exceeds_nonvisited=1; last;}
-		my $visited_time = defined($row->visited_time) ? $row->visited_time->strftime('%Y/%m/%d %H:%M') : '';
+		my $visited_time = defined($row->get_column('visited_time')) ? $row->visited_time->strftime('%Y/%m/%d %H:%M') : '';
 		push(@bookmarks_nonvisited, +{id=>$row->id, url=>$row->url, title=>(length $row->title ? $row->title : '(No title)'), comment=>$row->comment});
 	}
 
@@ -132,7 +132,7 @@ get '/' => sub {
 	while(my $row = $itr->next)
 	{
 		$counter++; if($counter>$limit_display) { $exceeds_visited=1; last;}
-		my $visited_time = defined($row->visited_time) ? $row->visited_time->strftime('%Y/%m/%d %H:%M') : '';
+		my $visited_time = defined($row->get_column('visited_time')) ? $row->visited_time->strftime('%Y/%m/%d %H:%M') : '';
 		push(@bookmarks_visited, +{id=>$row->id, url=>$row->url, title=>(length $row->title ? $row->title : '(No title)'), comment=>$row->comment, visited_time=>$visited_time});
 	}
 
