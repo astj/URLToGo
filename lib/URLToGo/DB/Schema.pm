@@ -13,7 +13,7 @@ table {
 table {
     name 'bookmarks';
     pk 'id';
-    columns qw (id url title owner_user_id visited_time entry_time comment;
+    columns qw (id url title owner_user_id visited_time entry_time comment);
 
 };
 1;
