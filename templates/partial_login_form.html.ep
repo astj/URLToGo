@@ -1,0 +1,35 @@
+<form action="<%= url_for('/login') %>" method="post" class="form-horizontal" id="Login<%= stash 'formId' %>">
+<fieldset>
+<legend>Login</legend>
+<div class="control-group">
+  <label class="control-label" for="Login<%= stash 'formId' %>User">Username</label>
+  <div class="controls">
+    <input type="text" name="username" id="Login<%= stash 'formId' %>User" placeholder="User name" required />
+  </div>
+</div>
+<div class="control-group">
+  <label class="control-label" for="Formpassword">Password</label>
+  <div class="controls">
+    <input type="password" name="password" id="Formpassword"  placeholder="Password" required />
+  </div>
+</div>
+
+<div class="control-group">
+  <div class="controls">
+    <input type="submit" value="Login" class="btn btn-primary" />
+    <input type="reset" value="Reset" class="btn" />
+    <input type="hidden" name="login_try" value="1" />
+    <input type="hidden" name="callback_url" value="<%= url_for %>" />
+  </div>
+</div>
+
+<div class="control-group">
+ <label class="control-label" for="Login<%= stash 'formId' %>signup_label">まだ使ったことがない?</label>
+ <div class="controls">
+   <span class="help-block" id="Login<%= stash 'formId' %>signup_label">
+     <a href="<%= url_for('signup') %>" class="btn">今すぐ始めよう！</a>
+   </span>
+ </div>
+</fieldset>
+</form>
+

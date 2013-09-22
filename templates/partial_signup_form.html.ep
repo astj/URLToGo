@@ -1,0 +1,36 @@
+<form action="<%= url_for('/signup') %>" method="post" class="form-horizontal" id="Signup<%= stash 'formId' %>">
+<fieldset>
+    <legend>URLToGoをはじめる</legend>
+    <div class="control-group <%= ( param('login_try') && stash 'signup_error_username') ? 'error' : '' %>">
+  <label class="control-label" for="Signup<%= stash 'formId' %>User">Username</label>
+  <div class="controls">
+        <input type="text" name="username" id="Signup<%= stash 'formId' %>User" placeholder="User name [a-zA-z0-9]" value="<%= (stash 'signup_error_username') ? '' : param('username') %>" />
+    <span class="help-inline"><%= param('login_try') && stash 'signup_error_username' %></span>
+  </div>
+</div>
+    <div class="control-group <%= ( param('login_try') && stash 'signup_error_password') ? 'error' : '' %>">
+  <label class="control-label" for="Signup<%= stash 'formId' %>Password">Password</label>
+  <div class="controls">
+        <input type="password" name="password" id="Signup<%= stash 'formId' %>Password"  placeholder="Password (at least 6 chars)" value="<%= (stash 'signup_error_password') ? '' : param('password') %>"/>
+        <span class="help-inline"><%= param('login_try') && stash 'signup_error_password' %></span>
+  </div>
+</div>
+    <div class="control-group  <%= ( param('login_try') && stash 'signup_error_email') ? 'error' : '' %>">
+  <label class="control-label" for="Signup<%= stash 'formId' %>email">e-mail</label>
+  <div class="controls">
+        <input type="text" name="email" id="Signup<%= stash 'formId' %>email"  placeholder="hogehoge@example.com" value="<%= (stash 'signup_error_email') ? '' : param('email') %>"/>
+        <span class="help-inline"><%= param('login_try') && stash 'signup_error_email' %></span>
+  </div>
+</div>
+
+<div class="control-group">
+  <div class="controls">
+    <input type="submit" value="Signup" class="btn btn-primary" />
+    <input type="hidden" name="login_try" value="1" />
+    <input type="reset" value="Reset" class="btn" />
+  </div>
+</div>
+
+</fieldset>
+</form>
+

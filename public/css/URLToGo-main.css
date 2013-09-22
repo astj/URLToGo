@@ -1,0 +1,19 @@
+body { padding-top:60px; } /*background-color: #f3fff3;}*/
+
+.form-signin {
+  max-width: 300px;
+  padding: 19px 29px 29px;
+  margin: 0 auto 20px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+}
+
+.bm_elem_left { 
+float:left;
+max-width:60%;
+overflow:hidden;
+}
+
+.bm_elem_right {
+float:right;
+}

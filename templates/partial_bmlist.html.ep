@@ -1,0 +1,29 @@
+<table class="table table-striped">
+  <tbody>
+  <% foreach my $entry (@$bookmark_list) { %>
+  <tr>
+    <td>
+      <div class="bm_elem_left">
+        <div><a href="<%= url_for('/jump')->query(to_id=>$entry->{id}) %>" target="_blank">\
+        <%= substr($entry->{title},0,30) . (length($entry->{title})>30 && '...')%></a></div>
+        <div><small><%= Mojo::URL->new($entry->{url})->host %> </small></div>
+        <div><small><b><%= length($entry->{visited_time}) ? 'Visited on '.$entry->{visited_time} : '' %></b></small></div>
+        <div style="max-width:100%"><small><%= $entry->{comment} %></small></div>
+      </div>
+      <div class="bm_elem_right">
+        <a class="btn btn-link" href="#" onClick="alert('実装できてません…');return false;"><i class="icon-pencil tool_tip" data-toggle="tooltip" title="編集"></i></a>
+        <a class="btn btn-link" href="https://twitter.com/share?url=<%= $entry->{url} %>&text=URLToGoでアクセスしたよ: <%= $entry->{title} %>" target="_blank"><i class="icon-share-alt tool_tip" data-toggle="tooltip" title="Share"></i></a>
+        <a class="btn btn-link" onClick="return confirm('このブックマーク \'<%= $entry->{title} %>\' を削除しても構いませんか？');" title="delete this boookmark" href="<%= url_for('/delete')->query(cb_url=>url_for()->query(disp_channel=>(stash 'disp_channel')),to_id=>$entry->{id}) %>"><i class="icon-remove-sign tool_tip" data-toggle="tooltip" title="削除"></i></a>
+      </div>
+    </td>
+  </tr>
+  <% } %>
+  </tbody>
+  <% if($list_exceeds) { %>
+  <tfoot>
+  <tr>
+    <td ><div class="text-center"><span class="pop_over" data-content="これより古いリンクは表示されません">...</span></div></td>
+  </tr>
+  </tfoot>
+  <% } %>
+</table>
