@@ -1,0 +1,10 @@
+# DB configuration
+# You may also need to add `production.conf`
+{
+  connect_info => [
+      'dbi:Pg:dbname=URLToGo;host=localhost',
+      'username',
+      'password',
+      {pg_enable_utf8=>1},
+  ],
+};
