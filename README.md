@@ -31,6 +31,6 @@ This repo is tested and deployed on heroku, using [heroku-buildpack](https://git
 
 To install dependencies, use `carton install`.
 
-### License
+## License
 
 MIT
