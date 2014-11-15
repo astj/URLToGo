@@ -1,6 +1,4 @@
 box: wercker/default
-services:
-  - wercker/heroku-deploy@2.2.1
 
 deploy:
     steps:
