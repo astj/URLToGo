@@ -6,10 +6,10 @@ deploy:
         # online at http://app.wercker.com/
         - script:
             name: pre_deploy_notifier
-            code: ./script/post_to_slack "Started deploy for <$WERCKER_GIT_COMMIT|https://github.com/astj/URLToGo/commit/$WERCKER_GIT_COMMIT>"
+            code: ./script/post_to_slack "Started deploy for \`<https://github.com/astj/URLToGo/commit/$WERCKER_GIT_COMMIT|$WERCKER_GIT_COMMIT>\`"
         - heroku-deploy:
             key-name: URLTOGO_DEPLOY_KEY
     after-steps:
         - script:
             name: post_deploy_notifier
-            code: ./script/post_to_slack "Finished deploy for <$WERCKER_GIT_COMMIT|https://github.com/astj/URLToGo/commit/$WERCKER_GIT_COMMIT>"
+            code: ./script/post_to_slack "Finished deploy for \`<https://github.com/astj/URLToGo/commit/$WERCKER_GIT_COMMIT|$WERCKER_GIT_COMMIT>\`"
