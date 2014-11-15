@@ -4,5 +4,12 @@ deploy:
     steps:
         # Execute the heroku-deploy, heroku details can be edited
         # online at http://app.wercker.com/
+        - script:
+	    name: pre_deploy_notifier
+	    code: curl -d "{\"text\": \"Starting deploy for <$WERCKER_GIT_COMMIT|https://github.com/astj/URLToGo/commit/$WERCKER_GIT_COMMIT> \"}" "$SLACK_WEBHOOK_URL"
         - heroku-deploy:
             key-name: URLTOGO_DEPLOY_KEY
+    after-steps:
+        - script:
+	    name: post_deploy_notifier
+	    code: curl -d "{\"text\": \"Finished deploy for <$WERCKER_GIT_COMMIT|https://github.com/astj/URLToGo/commit/$WERCKER_GIT_COMMIT> \"}" "$SLACK_WEBHOOK_URL"
