@@ -23,7 +23,6 @@ my $conf = plugin Config => {file => 'config/'.$ENV{PLACK_ENV}.'.conf'};
 # というアピール
 app->secret('Key of Encryption of Session Cookie');
 
-use Data::Dumper; warn Dumper %ENV;
 # ENVがあれば上書きする
 $conf->{connect_info}->[0] = $ENV{URLToGo_DBI_DSN} if defined $ENV{URLToGo_DBI_DSN};
 $conf->{connect_info}->[1] = $ENV{URLToGo_DBI_USER} if defined $ENV{URLToGo_DBI_USER};
