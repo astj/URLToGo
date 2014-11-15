@@ -5,3 +5,4 @@ deploy:
         # Execute the heroku-deploy, heroku details can be edited
         # online at http://app.wercker.com/
         - heroku-deploy
+            key-name: URLTOGO_DEPLOY_KEY
