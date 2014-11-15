@@ -1,0 +1,9 @@
+box: wercker/default
+services:
+  - wercker/heroku-deploy@2.2.1
+
+deploy:
+    steps:
+        # Execute the heroku-deploy, heroku details can be edited
+        # online at http://app.wercker.com/
+        - heroku-deploy
