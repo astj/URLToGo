@@ -6,7 +6,7 @@ build:
         - moltar/carton-install@0.3.0:
             without: develop
             cache_local: false
-            cache: true
+            cached: true
         - script:
             name: prove
             code: carton exec -- prove -lvr -PPretty t/
