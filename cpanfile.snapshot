@@ -38,16 +38,7 @@ DISTRIBUTIONS
     pathname: D/DR/DROLSKY/Class-Load-0.20.tar.gz
     provides:
       Class::Load 0.20
-      Class::Load::Error::DieAfterBeginIsa undef
-      Class::Load::Error::DieAfterIsa undef
-      Class::Load::Error::SyntaxErrorAfterIsa undef
-      Class::Load::OK undef
       Class::Load::PP 0.20
-      Class::Load::Stash undef
-      Class::Load::Stash::Sub undef
-      Class::Load::SyntaxError undef
-      Class::Load::VersionCheck 42
-      Class::Load::VersionCheck2 42
     requirements:
       Carp 0
       Data::OptList 0
@@ -86,6 +77,10 @@ DISTRIBUTIONS
     provides:
       Bundle::DBD::Pg 2.019003
       DBD::Pg 2.019003
+      DBD::Pg::DefaultValue 2.019003
+      DBD::Pg::db 2.019003
+      DBD::Pg::dr 2.019003
+      DBD::Pg::st 2.019003
     requirements:
       DBI 1.52
       ExtUtils::MakeMaker 6.11
@@ -240,7 +235,6 @@ DISTRIBUTIONS
       Data::Page 2.02
     requirements:
       Class::Accessor::Chained::Fast 0
-      Module::Build 0.35
       Test::Exception 0
       Test::More 0
   Data-Page-NoTotalEntries-0.02
@@ -262,7 +256,6 @@ DISTRIBUTIONS
       DateTime::Infinite::Future 1.03
       DateTime::Infinite::Past 1.03
       DateTime::LeapSecond 1.03
-      inc::MyModuleBuild undef
     requirements:
       Carp 0
       DateTime::Locale 0.41
@@ -808,7 +801,7 @@ DISTRIBUTIONS
       DateTime::Locale::zu_ZA undef
     requirements:
       List::MoreUtils 0
-      Module::Build 0.36
+      Module::Build 0
       Params::Validate 0.91
       perl 5.006
   DateTime-TimeZone-1.61
@@ -1241,45 +1234,7 @@ DISTRIBUTIONS
   Dist-CheckConflicts-0.09
     pathname: D/DO/DOY/Dist-CheckConflicts-0.09.tar.gz
     provides:
-      Bar 0.02
-      Bar::Bar 0.01
-      Bar::Bar::Bad 0.01
-      Bar::Bar::Good 0.02
-      Bar::Baz 0.02
-      Bar::Baz::Bad 0.01
-      Bar::Baz::Good 0.02
-      Bar::Conflicts undef
-      Bar::Conflicts2 undef
-      Bar::Conflicts3 undef
-      Bar::Conflicts::Bad undef
-      Bar::Conflicts::Bad2 undef
-      Bar::Conflicts::Bad3 undef
-      Bar::Conflicts::Good undef
-      Bar::Conflicts::Good2 undef
-      Bar::Conflicts::Good3 undef
-      Bar::Foo 0.01
-      Bar::Foo::Bad 0.01
-      Bar::Foo::Good 0.02
-      Bar::Quux 0.02
-      Bar::Quux::Bad 0.01
-      Bar::Quux::Good 0.02
-      Bar::Three 0.02
-      Bar::Two 0.02
-      Broken undef
       Dist::CheckConflicts 0.09
-      Foo undef
-      Foo::Bar 0.01
-      Foo::Baz 0.02
-      Foo::Conflicts undef
-      Foo::Conflicts2 undef
-      Foo::Conflicts::Bad undef
-      Foo::Conflicts::Broken undef
-      Foo::Conflicts::Good undef
-      Foo::Foo 0.01
-      Foo::Quux 0.02
-      Foo::Thing 0.02
-      Foo::Three 0.02
-      Foo::Two 0.02
     requirements:
       Carp 0
       Exporter 0
@@ -1302,52 +1257,10 @@ DISTRIBUTIONS
   Exporter-Lite-0.02
     pathname: M/MS/MSCHWERN/Exporter-Lite-0.02.tar.gz
     provides:
-      Dummy 0.5
       Exporter::Lite 0.02
     requirements:
       ExtUtils::MakeMaker 0
       Test::More 0.34
-  ExtUtils-MakeMaker-6.76
-    pathname: B/BI/BINGOS/ExtUtils-MakeMaker-6.76.tar.gz
-    provides:
-      DynaLoader 6.76
-      ExtUtils::Command::MM 6.76
-      ExtUtils::Liblist 6.76
-      ExtUtils::Liblist::Kid 6.76
-      ExtUtils::MM 6.76
-      ExtUtils::MM_AIX 6.76
-      ExtUtils::MM_Any 6.76
-      ExtUtils::MM_BeOS 6.76
-      ExtUtils::MM_Cygwin 6.76
-      ExtUtils::MM_DOS 6.76
-      ExtUtils::MM_Darwin 6.76
-      ExtUtils::MM_MacOS 6.76
-      ExtUtils::MM_NW5 6.76
-      ExtUtils::MM_OS2 6.76
-      ExtUtils::MM_QNX 6.76
-      ExtUtils::MM_UWIN 6.76
-      ExtUtils::MM_Unix 6.76
-      ExtUtils::MM_VMS 6.76
-      ExtUtils::MM_VOS 6.76
-      ExtUtils::MM_Win32 6.76
-      ExtUtils::MM_Win95 6.76
-      ExtUtils::MY 6.76
-      ExtUtils::MakeMaker 6.76
-      ExtUtils::MakeMaker::Config 6.76
-      ExtUtils::MakeMaker::_version 6.76
-      ExtUtils::Mkbootstrap 6.76
-      ExtUtils::Mksymlists 6.76
-      ExtUtils::testlib 6.76
-      MM 6.76
-      MY 6.76
-      in 6.76
-    requirements:
-      Data::Dumper 0
-      DirHandle 0
-      File::Basename 0
-      File::Spec 0.8
-      Pod::Man 0
-      perl 5.006
   List-MoreUtils-0.33
     pathname: A/AD/ADAMK/List-MoreUtils-0.33.tar.gz
     provides:
@@ -1394,10 +1307,6 @@ DISTRIBUTIONS
     pathname: D/DR/DROLSKY/Module-Implementation-0.07.tar.gz
     provides:
       Module::Implementation 0.07
-      T::Impl1 undef
-      T::Impl2 undef
-      T::ImplFails1 undef
-      T::ImplFails2 undef
     requirements:
       Carp 0
       ExtUtils::MakeMaker 6.30
@@ -1487,7 +1396,7 @@ DISTRIBUTIONS
       Mojolicious::Command::generate::app undef
       Mojolicious::Command::generate::lite_app undef
       Mojolicious::Command::generate::makefile undef
-      Mojolicious::Command::generate::plugin 0.01
+      Mojolicious::Command::generate::plugin undef
       Mojolicious::Command::get undef
       Mojolicious::Command::inflate undef
       Mojolicious::Command::prefork undef
@@ -1555,7 +1464,6 @@ DISTRIBUTIONS
   Package-Stash-XS-0.28
     pathname: D/DO/DOY/Package-Stash-XS-0.28.tar.gz
     provides:
-      CompileTime undef
       Package::Stash::XS 0.28
     requirements:
       ExtUtils::MakeMaker 6.30
@@ -1577,23 +1485,10 @@ DISTRIBUTIONS
     pathname: D/DR/DROLSKY/Params-Validate-1.08.tar.gz
     provides:
       Attribute::Params::Validate 1.08
-      Bar undef
-      Baz undef
-      Foo undef
-      PVTests undef
-      PVTests::Callbacks undef
-      PVTests::Defaults undef
-      PVTests::Regex undef
-      PVTests::Standard undef
-      PVTests::With undef
       Params::Validate 1.08
       Params::Validate::Constants 1.08
       Params::Validate::PP 1.08
       Params::Validate::XS 1.08
-      Quux undef
-      Testing::X undef
-      Yadda undef
-      inc::MyModuleBuild undef
     requirements:
       Attribute::Handlers 0.79
       Carp 0
@@ -1630,6 +1525,14 @@ DISTRIBUTIONS
       Scalar::Util 0
       parent 0
       perl 5.008001
+  Scope-Guard-0.20
+    pathname: C/CH/CHOCOLATE/Scope-Guard-0.20.tar.gz
+    provides:
+      Scope::Guard 0.20
+    requirements:
+      ExtUtils::MakeMaker 0
+      Test::More 0
+      perl 5.006001
   Sub-Install-0.926
     pathname: R/RJ/RJBS/Sub-Install-0.926.tar.gz
     provides:
@@ -1692,12 +1595,24 @@ DISTRIBUTIONS
       Test::Requires 0
       Test::SharedFork 0.15
       parent 0
+  Term-ANSIColor-4.03
+    pathname: R/RR/RRA/Term-ANSIColor-4.03.tar.gz
+    provides:
+      Term::ANSIColor 4.03
+    requirements:
+      Module::Build 0.28
+      perl 5.006
+  Term-Encoding-0.02
+    pathname: M/MI/MIYAGAWA/Term-Encoding-0.02.tar.gz
+    provides:
+      Term::Encoding 0.02
+    requirements:
+      ExtUtils::MakeMaker 0
   Test-Exception-0.32
     pathname: A/AD/ADIE/Test-Exception-0.32.tar.gz
     provides:
       Test::Exception 0.32
     requirements:
-      Module::Build 0.38
       Sub::Uplevel 0.18
       Test::Builder 0.7
       Test::Builder::Tester 1.07
@@ -1726,6 +1641,34 @@ DISTRIBUTIONS
       ExtUtils::MakeMaker 6.59
       Test::More 0.96
       perl 5.006001
+  Test-Pretty-0.30
+    pathname: T/TO/TOKUHIROM/Test-Pretty-0.30.tar.gz
+    provides:
+      App::Prove::Plugin::Pretty undef
+      App::Prove::Plugin::retty undef
+      TAP::Formatter::Pretty::Multi undef
+      TAP::Formatter::Pretty::Multi::Session undef
+      TAP::Formatter::Pretty::Single undef
+      TAP::Formatter::Pretty::Single::Session undef
+      Test::Pretty 0.30
+      Test::Pretty::Harness undef
+      Test::Pretty::Parser undef
+    requirements:
+      Carp 0
+      File::Temp 0
+      Module::Build 0.38
+      Scope::Guard 0
+      TAP::Formatter::Base 0
+      TAP::Formatter::Session 0
+      TAP::Harness 0
+      TAP::Parser 0
+      Term::ANSIColor 3.02
+      Term::Encoding 0
+      Test::Builder 0.82
+      Test::More 0.98
+      autodie 0
+      parent 0
+      perl 5.008001
   Test-Requires-0.07
     pathname: T/TO/TOKUHIROM/Test-Requires-0.07.tar.gz
     provides:
