@@ -1,6 +1,7 @@
 requires 'Teng';
 requires 'Mojolicious';
 requires 'Crypt::SaltedHash';
+requires 'Net::DNS';
 requires 'Email::Valid';
 requires 'DateTime';
 requires 'DBD::Pg';
