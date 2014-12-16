@@ -1,5 +1,13 @@
 box: wercker/default
 
+build:
+    steps:
+        - moltar/plenv
+        - moltar/carton-install@0.3.0:
+            without: develop
+        - script:
+            name: prove
+            code: carton exec -- prove -lvr -PPretty t/
 deploy:
     steps:
         # Execute the heroku-deploy, heroku details can be edited
